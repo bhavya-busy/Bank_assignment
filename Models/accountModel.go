@@ -5,7 +5,7 @@ type Account struct {
 	Ac_id       uint           `pg:"ac_id,pk"`
 	Ac_type     string         `pg:"ac_type"`
 	Balance     uint           `pg:"balance"`
-	BranchId    uint           `pg:"fk:branch_id"`
+	BranchId    uint           `pg:"fk:branch_id,on_delete:CASCADE,on_update:CASCADE"`
 	Transaction []*Transaction `pg:"rel:has-many"`
 	Branch      *Branch        `pg:"rel:has-one"`
 	Map         []*Map         `pg:"rel:has-many"`

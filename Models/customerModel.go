@@ -5,6 +5,6 @@ type Customer struct {
 	Cust_name    string  `pg:"cust_name"`
 	Cust_address string  `pg:"cust_address"`
 	Branch       *Branch `pg:"rel:has-one"`
-	BranchId     uint    `pg:"fk:branch_id"`
+	BranchId     uint    `pg:"fk:branch_id,on_delete:CASCADE,on_update:CASCADE"`
 	Map          []*Map  `pg:"rel:has-many"`
 }
